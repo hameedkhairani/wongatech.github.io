@@ -43,13 +43,13 @@ Here is some sample code demonstrating a way of having a Docs Module in Nancy :
         }
     }
 
-The integration of Nancy with Swagger was a bit fiddly though in a sense that we had to embed the Swagger-ui code as part of our web Host projects. Also the contract definition was specified in a Swagger.json file that needed to be manually kept in-sync with the contract definitions. This posed an issue i-e. whenever we extended the API, we had to remember to update the Json file as well which was prone to human error. Screen-shot below:
+The integration of Nancy with Swagger was a bit fiddly though in a sense that we had to embed the Swagger-ui code as part of our web Host projects. Also the contract definition was specified in a Swagger.json file that needed to be manually kept in-sync with the contract definitions. This posed an issue i-e. whenever we extended the API, we had to remember to update the JSON file which was prone to human error. Screen-shot below:
 
-![](/images/2015-11-15-self-describing-restful-apis-using-swagger/swagger-json.png)
+![](/images/2015-11-15-self-describing-restful-apis-using-swagger/swagger-as well.png)
 
 
 #### Using Swagger with Web API
-As we moved towards using Web API instead of Nancy Fx to host our Rest endpoints, we came across a rather nice open-source implementation from Swashbuckle that allowed auto-generation of Swagger documentation on the fly. It also has an embedded Swagger-UI within the package so you don't have to maintain a copy of the source in your Host projects. Nuget package and GitHub repo links below:
+As we moved towards using Web API instead of Nancy Fx to host our Rest endpoints, we came across a rather nice open-source implementation from Swashbuckle that allowed auto-generation of Swagger documentation on the fly. It also had an embedded Swagger-UI within the package so you don't have to maintain a copy of the source in your Host projects. Nuget package and GitHub repo links below:
 
 [https://www.nuget.org/packages/Swashbuckle](https://www.nuget.org/packages/Swashbuckle)
 
@@ -68,7 +68,7 @@ Here is some sample code demonstrating a way of having a Docs Controller in Web 
         }
     }
 
-We've been using it successfully for a number of services now and have also managed to extend it somewhat.One particular example is where we used an "OperationFilter" to implement API-key Authorization headers which I'll cover in a separate post. Notice the custom Authorization field on the Swagger-UI in the screen-shot below:
+We've been using it successfully for a number of services now and have also managed to extend it somewhat. One particular example is where we used an "OperationFilter" to implement API-key Authorization headers which I'll cover in a separate post. Notice the custom Authorization field on the Swagger-UI in the screen-shot below:
 
 	
 ![](/images/2015-11-15-self-describing-restful-apis-using-swagger/swagger-ui-emp-details.png)
@@ -76,5 +76,5 @@ We've been using it successfully for a number of services now and have also mana
 
 ###Summary
 
-Swashbuckle provides an elegant way to seamlessly integrate Swagger documentation and Swagger-ui to your Rest APIs. It is customizable, extensible and provide out-of box leverage for Xml comments. This keeps the documentation tightly integrated into the code, allowing it to always stay in sync with the contracts.
+Swashbuckle provides an elegant way to seamlessly integrate Swagger documentation and Swagger-ui to your Rest APIs. It is customizable, extensible and provides out of the box leverage for XML comments. This keeps the documentation tightly integrated into the code, allowing it to always stay in sync with the contracts.
 
